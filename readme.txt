@@ -23,7 +23,7 @@ Requirement
 ToDo
 -------------------------------------------------------------------------------------
 – At the moment the HTML-Code after a drag is coming from a php-Script. It could be 
-  done in pure JavaScript and therefore without the requirement for PHP-Server.
+  done in pure JavaScript and therefore without the requirement for a PHP-Server.
 – The coordinate system would be nice to have it in geo-coordinates.
 – The quality of the code is not best. Refactoring should be done.
 

@@ -15,12 +15,6 @@ class shTile {
     public $ViewW, $ViewH;
     public $OffsetX, $OffsetY;
 
-    // Tile x-/y-Start
-    private $TileX, $TileY;
-    
-    // Tile Counts based on W and H
-    private $TileCountX, $TileCountY;
-
     //private $FilePath, $TileW, $TileH;
     private $RootPath, $RootCachePath;
 
@@ -120,73 +114,72 @@ class shTile {
 
 
 
-          include_once "./../../needles.php";
-		// $myPointers = dynPointers();
+        include_once "./../../needles.php";
+        // $myPointers = dynPointers();
 
 
 
-          for ($i = 0; $i < count($myPointers); $i++) {
+        for ($i = 0; $i < count($myPointers); $i++) {
 
 
-          $myCurrentPoint = $myPointers[$i];
-          // zh on new map
-          $PointX    = $myCurrentPoint["PointX"];
-          //print_r ($myCurrentPoint["PointX"]);
+            $myCurrentPoint = $myPointers[$i];
+            // zh on new map
+            $PointX    = $myCurrentPoint["PointX"];
+            //print_r ($myCurrentPoint["PointX"]);
 
-          $PointY    = $myCurrentPoint["PointY"];
+            $PointY    = $myCurrentPoint["PointY"];
 
-          $PointType = 0;
-          $PointText = $myCurrentPoint["PointText"];
-          $Link   = $myCurrentPoint["Link"];
-
-
-
-  $PointerPicW     = 25;
-  $PointerPicWHalf = 12;
-  $PointerPicH     = 41;
-
-
-  // gibt an, wo die linke bildkante liegt
-  $pxPointX =  ($this->DivW/2) - ($this->PicScaleW*$this->PosX) + ($this->PicScaleW * $PointX);
-  $pxPointY =  ($this->DivH/2) - ($this->PicScaleH*$this->PosY) + ($this->PicScaleH * $PointY);
-
-  //            DIV
-  //            689	/   2
-  //                           345
-
-          $EndPointX = $pxPointX - $this->DivXshift - $PointerPicWHalf ;
-          $EndPointY = $pxPointY - $this->DivYshift - $PointerPicH ;
-
-
-              $myOut .= "<div  class='pointerDiv' style='height: ".$PointerPicH."px; left: ".floor($EndPointX)."px; top: ".floor($EndPointY)."px;'>";
-
-
-                  $myOut .= "<div id='leg_".$i."' class='legPointer'>";
-                  $myOut .= $PointText;
-                  $myOut .= "</div>";
-
-
-                  $myOut .= "<div id='point_".$i."' class='imgPointer'>";
-
-                  $myOut .= "<img ";
-                  // $myOut .= "id='point_".$Link."'";
-                  // $myOut .= "onClick='pointerAction(".$Link.",\"".$PointText."\")'";
+            $PointText = $myCurrentPoint["PointText"];
+            $Link   = $myCurrentPoint["Link"];
 
 
 
-                  $myOut .= "onClick='parent.location=\"".$Link."\"' ";
-                  $myOut .= "onmouseover='pointerRollover(".$i.")' ";
-                  $myOut .= "onmouseout='pointerRolloverEnd(".$i.")' ";
+            $PointerPicW     = 25;
+            $PointerPicWHalf = 12;
+            $PointerPicH     = 41;
 
 
-                  $myOut .= "style='width: ".$PointerPicW."px; height: ".$PointerPicH."px; class='PointerImage' ";
-                  $myOut .= "src='./mapito/img/pointer.png'/>";
+            // gibt an, wo die linke bildkante liegt
+            $pxPointX =  ($this->DivW/2) - ($this->PicScaleW*$this->PosX) + ($this->PicScaleW * $PointX);
+            $pxPointY =  ($this->DivH/2) - ($this->PicScaleH*$this->PosY) + ($this->PicScaleH * $PointY);
 
-                  $myOut .= "</div>";
+            //            DIV
+            //            689	/   2
+            //                           345
 
-                  $myOut .= "</div>";
+            $EndPointX = $pxPointX - $this->DivXshift - $PointerPicWHalf ;
+            $EndPointY = $pxPointY - $this->DivYshift - $PointerPicH ;
 
-      }
+
+            $myOut .= "<div  class='pointerDiv' style='height: ".$PointerPicH."px; left: ".floor($EndPointX)."px; top: ".floor($EndPointY)."px;'>";
+
+
+            $myOut .= "<div id='leg_".$i."' class='legPointer'>";
+            $myOut .= $PointText;
+            $myOut .= "</div>";
+
+
+            $myOut .= "<div id='point_".$i."' class='imgPointer'>";
+
+            $myOut .= "<img ";
+            // $myOut .= "id='point_".$Link."'";
+            // $myOut .= "onClick='pointerAction(".$Link.",\"".$PointText."\")'";
+
+
+
+            $myOut .= "onClick='parent.location=\"".$Link."\"' ";
+            $myOut .= "onmouseover='pointerRollover(".$i.")' ";
+            $myOut .= "onmouseout='pointerRolloverEnd(".$i.")' ";
+
+
+            $myOut .= "style='width: ".$PointerPicW."px; height: ".$PointerPicH."px; class='PointerImage' ";
+            $myOut .= "src='./mapito/img/pointer.png'/>";
+
+            $myOut .= "</div>";
+
+            $myOut .= "</div>";
+
+        }
 
 
         $myOut .= '</div>';
@@ -222,7 +215,7 @@ class shTile {
                 $myOut .= "</div>";
             }
         }
-        
+
         return $myOut;
     }
 
@@ -231,7 +224,7 @@ class shTile {
         if ($x < 0) {
             $x = -1;
         }
-        
+
         if ($y < 0) {
             $y = -1;
         }

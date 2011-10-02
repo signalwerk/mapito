@@ -32,14 +32,14 @@ $im->readImage($mySourcePath);
 // Now you can do anything with the image, such as convert to a raster image and output it to the browser:
 $im->setImageFormat("png");
 
-$fp =fopen($myDestinationPath, 'w');  
-@fwrite($fp, $im);  
-@fclose($fp);  
+$fp =fopen($myDestinationPath, 'w');
+@fwrite($fp, $im);
+@fclose($fp);
 
 // To output the image to the explorer
 // header("Content-Type: image/png");
 // echo $im;
- 
+
 echo "rendering done. saved: ".$myDestinationPath;
 
 

@@ -25,25 +25,25 @@ along with mapito.  If not, see <http://www.gnu.org/licenses/>.
 // do something like
 // chown -R signalwerk:psacln ./img/cach/
 
-set_time_limit(600000); 
+set_time_limit(600000);
 
 include_once "./mapito.php";
 
 $tile = new shTile();
-$tile->setZoom(0.125);	
+$tile->setZoom(0.125);
 $tile->PosX = 0.5;
 $tile->PosY = 0.5;
 
-if (ob_get_level() == 0) ob_start(); 
+if (ob_get_level() == 0) ob_start();
 
 foreach($tile->ZoomLevels as $myLevel) {
 
-	$tile->setZoom($myLevel);	
-	
-	$tile->DivW = 15000 * $myLevel;
-	$tile->DivH = 15000 * $myLevel;	
-    
-	$tile->genDrag();
+    $tile->setZoom($myLevel);
+
+    $tile->DivW = 15000 * $myLevel;
+    $tile->DivH = 15000 * $myLevel;
+
+    $tile->genDrag();
 }
 
 print "end";

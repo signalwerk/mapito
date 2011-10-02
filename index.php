@@ -19,7 +19,7 @@ along with mapito.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 if ($_GET["dev"]== 1) {
-?>
+    ?>
 <div  style='background-color: #f0f; z-index: 215; position: absolute; width:100%; height:1px; left: 0px; top: 50%;'>
 
 </div>
@@ -49,8 +49,8 @@ if ($_GET["dev"]== 1) {
     <link media="all" href="./mapito/css/mapito.css" type="text/css" rel="stylesheet">
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="./mapito/js/mapito.js"></script>
 
 </head>
