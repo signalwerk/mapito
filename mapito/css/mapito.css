@@ -1,0 +1,98 @@
+/* ---------------------------------------- */
+/* defaults                                 */
+/* ---------------------------------------- */
+
+* {
+	text-decoration:none;
+	list-style-type:none;
+	border:none;
+	margin:0;
+	padding:0;
+}
+
+
+html,body {
+	height:100%;
+	background-color:#ffdd00;
+}
+
+
+html,body, h1 {
+	font-size:13px;
+	line-height:18px;		
+	font-family:Courier, "Courier New", monospace;
+	letter-spacing:.05em;	
+}
+
+
+#mask
+{
+	position:absolute;
+	overflow:hidden;
+	left:0;
+	top:0;
+}
+
+
+#PanZoomBar {
+    left: 953px;
+    position: absolute;
+    top: 36px;
+    width: 36px;
+    z-index: 1006;
+}
+
+
+#zoomin {
+    cursor: pointer;
+    height: 18px;
+    left: 24px;
+    position: absolute;
+    top: 0;
+    width: 18px;
+}
+
+
+#zoomout {
+    cursor: pointer;
+    height: 18px;
+    position: absolute;
+    top: 0;
+    width: 18px;
+}
+
+
+#txtContainer {
+    position: absolute;
+    z-index: 400;
+}
+
+
+#mapContainer {
+    position: absolute;
+    z-index: 200;
+}
+
+.pointerDiv {
+    cursor: pointer;
+    position: absolute;
+}
+
+.legPointer {
+    background-color: #FFDD00;
+    display: none;
+    font-size: 16px;
+    left: 12px;
+    padding: 6px 18px 6px 23px;
+    position: absolute;
+    top: 7px;
+    white-space: nowrap;
+    z-index: 300;
+}
+
+.imgPointer {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 301;
+}
